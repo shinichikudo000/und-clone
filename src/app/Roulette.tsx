@@ -180,7 +180,7 @@ export default function Roulette() {
                     <div className="w-1/3 flex flex-col justify-center">
                         <p className="text-black text-3xl font-bold">
                             UND brings the essence of Japanese cuisine to your table, with our mouthwatering breads, pastries, and premium Japanese ingredients. <br></br>
-                            The name UND is crafted from the words 'UN' and 'D,' with various words sandwiched between them to form positive expressions related to food. It's akin to the bread we use for our sandwiches, UND combines these elements to offer a unique and flavorful experience.
+                            The name UND is crafted from the words &apos;UN&apos; and &apos;D,&apos; with various words sandwiched between them to form positive expressions related to food. It&apos;s akin to the bread we use for our sandwiches, UND combines these elements to offer a unique and flavorful experience.
                         </p>
                     </div>
                 </div>
