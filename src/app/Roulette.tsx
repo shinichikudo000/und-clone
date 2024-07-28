@@ -119,12 +119,6 @@ export default function Roulette() {
                     ])
 
                     const firstData = arrayCopy.shift();
-                    const elementsLetterD6 = document.querySelectorAll('.letterD-6')
-
-                    elementsLetterD6.forEach(element => {
-                        element.classList.remove('letterD-6')
-                        console.log(element)
-                    })
 
                     if (firstData) {
                         arrayCopy.push(firstData);
@@ -139,7 +133,7 @@ export default function Roulette() {
     
     return(
         <AnimatePresence>
-            <motion.div ref={scope} className="w-screen h-screen p-4 uppercase flex justify-center items-center font-oswald">
+            <motion.div ref={scope} className="w-screen h-screen p-4 uppercase flex justify-center items-center font-oswald z-20">
                 <div className="h-[72.5%] w-full flex">
                     <div className={`w-2/3 h-full overflow-hidden relative`}>
                         <div className="w-full h-full flex justify-start items-center absolute top-0 left-0">
@@ -151,14 +145,14 @@ export default function Roulette() {
                             rouletteData?.map((data, index) => {
                                 if(index === 6) {
                                     return (
-                                        <motion.div key={index} className={`roulette item-${index}-container translate-x-[${unContainerWidth}]`}>
-                                            <h2 className={`item-${index} text-[10vh] leading-none font-medium`}>
+                                        <motion.div key={index} initial={{x: unContainerWidth}} className={`roulette item-${index}-container`}>
+                                            <motion.h2 initial={{fontSize: "10vh"}} className={`item-${index} leading-none font-medium`}>
                                                 {data.split('').map((letter, letterIndex) => (
                                                     <span key={`${letter}-${letterIndex}-${index}`}  className={`${letter.charCodeAt(0) === 100 ? `letterD-${index} text-black`: `letter-${index} text-[#cccccc]`}`}>
                                                         {letter}
                                                     </span>
                                                 ))}
-                                            </h2>
+                                            </motion.h2>
                                         </motion.div>
                                     )
                                 } else {
